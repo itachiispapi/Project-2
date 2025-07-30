@@ -1,0 +1,19 @@
+#puzzlearea {
+  width: 400px;
+  height: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.tile {
+  width: 98px;
+  height: 98px;
+  border: 2px solid black;
+  position: absolute;
+  font-size: 32pt;
+  font-family: sans-serif;
+  text-align: center;
+  line-height: 98px;
+  box-sizing: border-box;
+  background-image: url("background.jpg");
+}
