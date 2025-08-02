@@ -1,3 +1,8 @@
+<!----------- Features ----------->
+<!-- 1. End of game notification -->
+<!-- 2. Game time tracked and uploaded -->
+<!-- 3. Admin controlled database -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +12,14 @@
   <script src="fifteen.js" defer></script>
 </head>
 <body>
-  <h1>Fifteen Puzzle</h1>
+  <h1>Fifteen Puzzle!</h1>
+
+  <div id="timer">⏱ 0 min 0 sec</div>
+
+  <div class="btn">
+    <a href="admin.php" target="_blank"><button>View Stats</button></a>
+  </div>
+
 
   <div id="puzzlearea">
     <!-- 15 tiles will be inserted here dynamically by JS -->
@@ -29,12 +41,12 @@
   </div>
 
 <!-- Shuffle Button -->
-  <div style="text-align: center; margin-top: 20px;">
+  <div class="btn">
     <button id="shufflebutton">Shuffle</button>
   </div>
 
   <!-- Validation links for HTML/CSS -->
-  <p style="text-align: right;">
+  <p class="validators">
     <a href="https://validator.w3.org/"><img src="w3c-xhtml.png" alt="Valid HTML"></a>
     <a href="https://jigsaw.w3.org/css-validator/"><img src="w3c-css.png" alt="Valid CSS"></a>
   </p>
