@@ -5,6 +5,11 @@ let timerInterval = null;
 let moveCount = 0;
 let isShuffling = false;
 
+const bgMusic = new Audio("music.mp3");
+bgMusic.loop = true;  // loop background music
+
+const winSound = new Audio("win.wav");
+
 document.addEventListener("DOMContentLoaded", function () {
   const puzzleArea = document.getElementById("puzzlearea");
   const tiles = puzzleArea.getElementsByClassName("tile");
@@ -92,6 +97,11 @@ document.addEventListener("DOMContentLoaded", function () {
   }
   
   function showWinMessage() {
+  // music!! background song and win chime.
+  bgMusic.pause();
+  bgMusic.currentTime = 0;
+  winSound.play();
+
   const puzzleArea = document.getElementById("puzzlearea");
   puzzleArea.style.boxShadow = "0 0 30px 10px gold";
 
@@ -112,6 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.getElementById("shufflebutton").addEventListener("click", shufflePuzzle);
 
+  // shuffles puzzle
   function shufflePuzzle() {
   const tiles = document.getElementsByClassName("tile");
   const existingWinMessage = document.getElementById("winMessage");
@@ -136,6 +147,9 @@ document.addEventListener("DOMContentLoaded", function () {
   // set timer using minutes and seconds
   moveCount = 0;
   startTime = Date.now();
+
+  bgMusic.currentTime = 0;  // restart from beginning
+  bgMusic.play();
 
     if (timerInterval) {
     clearInterval(timerInterval);
