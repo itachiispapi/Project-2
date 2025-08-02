@@ -20,12 +20,18 @@ $result = $conn->query("SELECT username, time_taken_seconds, moves_count, game_d
 <body>
   <h1> Fifteen Puzzle Admin Panel</h1>
   <table border="1">
-    <tr><th>Rank</th><th>Username</th><th>Time (s)</th><th>Moves</th><th>Date</th></tr>
+    <tr><th>Rank</th><th>Username</th><th>Time (M:SS)</th><th>Moves</th><th>Date</th></tr>
     <?php
     $rank = 1;
+    // reformatted time to display minutes and seconds
     while ($row = $result->fetch_assoc()) {
-        echo "<tr><td>$rank</td><td>{$row['username']}</td><td>{$row['time_taken_seconds']}</td><td>{$row['moves_count']}</td><td>{$row['game_date']}</td></tr>";
-        $rank++;
+      $seconds = intval($row['time_taken_seconds']);
+      $minutes = floor($seconds / 60);
+      $remainingSeconds = $seconds % 60;
+      $formattedTime = sprintf("%d:%02d", $minutes, $remainingSeconds);
+
+      echo "<tr><td>$rank</td><td>{$row['username']}</td><td>{$formattedTime}</td><td>{$row['moves_count']}</td><td>{$row['game_date']}</td></tr>";
+      $rank++;
     }
     ?>
   </table>
