@@ -1,3 +1,7 @@
+*{
+  font-family: sans-serif;
+}
+
 #puzzlearea {
   width: 400px;
   height: 400px;
@@ -5,15 +9,79 @@
   position: relative;
 }
 
+h1 {
+  text-align: center;
+  padding: 2rem;
+}
+
 .tile {
-  width: 98px;
-  height: 98px;
+  width: 96px;
+  height: 96px;
   border: 2px solid black;
   position: absolute;
   font-size: 32pt;
-  font-family: sans-serif;
   text-align: center;
-  line-height: 98px;
+  line-height: 96px;
   box-sizing: border-box;
   background-image: url("background.jpg");
+  background-size: 400px 400px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  text-shadow: 
+    -2px -2px 0 white,
+    2px -2px 0 white,
+    -2px  2px 0 white,
+    2px  2px 0 white;
+}
+
+.movablepiece {
+  border-color: red;
+  color: #006600;
+  text-decoration: underline;
+}
+
+.validators {
+  text-align: right;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 20px;
+}
+
+#shufflebutton {
+  font-size: 16pt;
+  padding: 10px 20px;
+  background-color: #e1d332ce;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#shufflebutton:hover {
+  background-color: #006600;
+  color: white;
+}
+
+#timer {
+  text-align:center;
+}
+
+.btn {
+  text-align: center;
+  margin: 20px;
+}
+
+.btn button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #f8b400;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn button:hover {
+  background-color: #006600;
+  color: white;
 }
